@@ -1,5 +1,4 @@
 import os
-from fastapi import FastAPI
 import openai
 import streamlit as st
 from fastapi import Request
