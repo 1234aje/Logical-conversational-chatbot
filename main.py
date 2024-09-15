@@ -25,8 +25,6 @@ def generate_response(query,temperture):
 
 st.title("Enhanced chatbot for Logical & Reasoning")
 st.sidebar.title("setting")
-api_key = st.sidebar.text_input("Enter OpenAI key:",type = "password")
-
 temperture = st.sidebar.slider("Temperture",min_value = 0.0,max_value = 2.0,value = 1.0)
 
 st.write("Logical Question")
