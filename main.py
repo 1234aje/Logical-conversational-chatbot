@@ -1,6 +1,6 @@
 import os
-import openai
 import streamlit as st
+from fastapi import Request
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
@@ -10,6 +10,7 @@ load_dotenv()
 
 open_ai_key = os.getenv("OPENAI")
 os.environ["OPENAI_API_KEY"] = open_ai_key
+
 
 prompt_template = PromptTemplate(
     input_variables=["query"],
@@ -25,6 +26,7 @@ def generate_response(query,temperture):
 
 st.title("Enhanced chatbot for Logical & Reasoning")
 st.sidebar.title("setting")
+
 temperture = st.sidebar.slider("Temperture",min_value = 0.0,max_value = 2.0,value = 1.0)
 
 st.write("Logical Question")
