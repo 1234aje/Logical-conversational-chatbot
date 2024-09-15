@@ -1,7 +1,6 @@
 import os
 import openai
 import streamlit as st
-from fastapi import Request
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
