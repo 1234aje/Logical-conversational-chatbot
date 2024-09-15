@@ -8,8 +8,7 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 load_dotenv()
 
-open_ai_key = os.getenv("OPENAI")
-os.environ["OPENAI_API_KEY"] = open_ai_key
+open_ai_key = 'sk-3NGF17u31Dub0bSCWl7gjfHWAPn7LHLFjrFUDz83dQT3BlbkFJv1uBIdg_GmxYorGyl3G63hswckReV6mefAi7LZKlIA'
 
 prompt_template = PromptTemplate(
     input_variables=["query"],
@@ -17,7 +16,7 @@ prompt_template = PromptTemplate(
 )
 
 def generate_response(query,temperture):
-    llm = ChatOpenAI(temperature = temperture)
+    llm = ChatOpenAI(openai_api_key= open_ai_key ,temperature = temperture)
     output_parser = StrOutputParser()
     chain = LLMChain(llm = llm,prompt= prompt_template,output_parser = output_parser)
     result = chain.invoke(query)
