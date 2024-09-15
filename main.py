@@ -8,7 +8,8 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 load_dotenv()
 
-open_ai_key = 'sk-3NGF17u31Dub0bSCWl7gjfHWAPn7LHLFjrFUDz83dQT3BlbkFJv1uBIdg_GmxYorGyl3G63hswckReV6mefAi7LZKlIA'
+open_ai_key = os.getenv("OPENAI")
+os.environ["OPENAI_API_KEY"] = open_ai_key
 
 prompt_template = PromptTemplate(
     input_variables=["query"],
