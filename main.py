@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 open_ai_key = os.getenv("OPENAI")
-open_ai_key = 'sk-None-0yAX0rnCdIa7mWkWFc71T3BlbkFJeOXBRCQCJaXwuxftpiMn'
 os.environ["OPENAI_API_KEY"] = open_ai_key
 
 app = FastAPI()
