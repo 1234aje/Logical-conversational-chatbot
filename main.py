@@ -11,9 +11,6 @@ load_dotenv()
 open_ai_key = os.getenv("OPENAI")
 os.environ["OPENAI_API_KEY"] = open_ai_key
 
-app = FastAPI()
-
-
 prompt_template = PromptTemplate(
     input_variables=["query"],
     template="Given the following question, provide a logical reasoning-based answer in points: {query}"
