@@ -16,8 +16,7 @@ prompt_template = PromptTemplate(
     template="Given the following question, provide a logical reasoning-based answer in points: {query}"
 )
 
-def generate_response(query,api_key,temperture):
-    openai.api_key = api_key
+def generate_response(query,temperture):
     llm = ChatOpenAI(temperature = temperture)
     output_parser = StrOutputParser()
     chain = LLMChain(llm = llm,prompt= prompt_template,output_parser = output_parser)
@@ -34,7 +33,7 @@ st.write("Logical Question")
 user_input = st.text_input("YOU :")
 
 if user_input:
-    response = generate_response(user_input,api_key,temperture)
+    response = generate_response(user_input,temperture)
     st.write(response['text'])
 else:
     st.write("Pease provide the question")
