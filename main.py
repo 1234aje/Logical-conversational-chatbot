@@ -17,7 +17,7 @@ prompt_template = PromptTemplate(
 )
 
 def generate_response(query,temperture):
-    llm = ChatOpenAI(openai_api_key= open_ai_key ,temperature = temperture)
+    llm = ChatOpenAI(temperature = temperture)
     output_parser = StrOutputParser()
     chain = LLMChain(llm = llm,prompt= prompt_template,output_parser = output_parser)
     result = chain.invoke(query)
