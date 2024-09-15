@@ -2,6 +2,5 @@ langchain
 langchain_community
 python-dotenv
 openai
-fastapi
 uvicorn
 streamlit
